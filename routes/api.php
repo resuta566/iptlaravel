@@ -20,6 +20,7 @@ Route::get('/gago', function () {
     return 'Hello GAGO';
 });
 
+Route::resource('eposts', 'PostsController');
 Route::resource('eusers', 'UsersController');
 //List Students in Json
 Route::get('/students', 'StudentController@index');

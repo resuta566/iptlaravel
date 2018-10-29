@@ -2,6 +2,10 @@
 
 use Faker\Generator as Faker;
 
-factory(App\Posts::class, 50)->create()->each(function ($u) {
-    $u->posts()->save(factory(App\Users::class)->make());
+$factory->define(Posts::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => $faker->randomElement(Users::pluck('id')->toArray()),
+        'title' => $faker->paragraph,
+        'body' => $faker->paragraph,
+    ];
 });

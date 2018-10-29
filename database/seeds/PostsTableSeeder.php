@@ -12,13 +12,16 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+        // factory(App\Posts::class, 10)->create();
+
         $faker = Faker::create();
-        foreach(range(1,20) as $index){
+        foreach(range(1,30) as $index){
+           
         DB::table('posts')->insert([
-            'title' => $faker->paragraph,
+            'user_id' => $faker->randomElement(App\Users::pluck('id')->toArray()),
+            'title' => $faker->sentence,
             'body' => $faker->paragraph,
         ]);
-        }
-        
+    }
     }
 }

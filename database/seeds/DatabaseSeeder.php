@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
         PostsTableSeeder::class
     );
     
-    $this->call(
-        CommentsTableSeeder::class
-    );
+    // $this->call(
+    //     CommentsTableSeeder::class
+    // );
     }
 }
